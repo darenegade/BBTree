@@ -13,8 +13,16 @@ private:
         Node(const int k) : key(k) {}
         Node(const int k, Node *l, Node *r) : key(k), left(l), right(r) {}
         bool search(const int) const;
-        Node *insert(const int, const double);
-        Node *remove(const int, const double);
+        Node* insert(const int, const double);
+        Node* remove(const int, const double);
+
+        void rotateLeft(Node **node);
+        void rotateRight(Node **node);
+        void rotateLeftRight(Node **node);
+        void rotateRightLeft(Node **node);
+        void checkBalance(Node **node, const double);
+
+        double balance();
     };
 
     const double alpha;

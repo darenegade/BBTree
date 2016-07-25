@@ -37,7 +37,7 @@ Node *BBTree::Node::insert(const int insertKey, const double alpha) {
     return ret;
 }
 
-Node *BBTree::Node::remove(const int, const double) {
+Node *BBTree::Node::remove(const int removeKey, const double alpha) {
     return nullptr;
 }
 
@@ -103,7 +103,7 @@ bool BBTree::search(const int searchKey) const {
     return root->search(searchKey);
 }
 
-void BBTree::insert(const int insertKey) {
+ BBTree::insert(const int insertKey) {
     root->insert(insertKey, alpha);
 }
 

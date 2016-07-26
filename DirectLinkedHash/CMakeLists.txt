@@ -1,0 +1,2 @@
+set(SOURCE_FILES DirectLinkedHashList.cpp DirectLinkedHashList.h DirectLinkedHashMain.cpp)
+add_executable(DirectLinkedHashList DirectLinkedHashMain.cpp)

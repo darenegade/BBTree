@@ -27,4 +27,9 @@ int main(){
     hashList->remove(19);
     hashList->print();
 
+    cout << endl << "-------------" << endl << endl;
+
+    cout << "43? " << ((hashList->search(43))? "Ja":"Nein")<<endl;
+    cout << "19? " << ((hashList->search(19))? "Ja":"Nein")<<endl;
+
 }

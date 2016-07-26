@@ -13,7 +13,10 @@ void DirectLinkedHashList::remove(const int key) {
     if(data[hash] == nullptr){
         return;
     } else if (data[hash]->key == key) {
+        Node *tmp = data[hash];
         data[hash] = data[hash]->next;
+
+        delete tmp;
     } else {
         data[hash]->remove(key);
     }
@@ -32,10 +35,10 @@ void DirectLinkedHashList::insert(const int key) {
 bool DirectLinkedHashList::search(const int key) const {
     int hash = this->hash(key);
 
-    Node *current;
-    do{
-        current = data[hash];
-    } while (current != nullptr && current->key != key);
+    Node *current = data[hash];
+    while (current != nullptr && current->key != key){
+        current = current->next;
+    };
 
     return current != nullptr;
 
@@ -58,7 +61,10 @@ void DirectLinkedHashList::Node::remove(const int key) {
     if(next == nullptr){
         return;
     } else if (next->key == key) {
+        Node *tmp = next;
         next = next->next;
+
+        delete tmp;
     } else {
         next->remove(key);
     }
